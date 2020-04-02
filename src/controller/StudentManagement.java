@@ -1,7 +1,6 @@
 package controller;
 
 import model.Student;
-
 import java.util.List;
 import java.util.Scanner;
 
@@ -26,6 +25,10 @@ public class StudentManagement {
                 index++;
             }
         }
+        boolean isIndexIncrease = index == 1;
+        if (isIndexIncrease) {
+            System.out.println("No Student has scholarship!");
+        }
     }
 
     public void displayFemaleStudent(List<Student> list) {
@@ -36,6 +39,10 @@ public class StudentManagement {
                 student.displayData();
                 index++;
             }
+        }
+        boolean isIndexIncrease = index == 1;
+        if (isIndexIncrease) {
+            System.out.println("No Female Student!");
         }
     }
 
