@@ -6,10 +6,10 @@ import java.time.LocalDate;
 public class Person {
     private String name;
     private boolean gender;
-    private SimpleDateFormat birthDate;
+    private int[] birthDate;
     private String address;
 
-    public Person(String name, boolean gender, SimpleDateFormat birthDate, String address) {
+    public Person(String name, boolean gender, int[] birthDate, String address) {
         this.name = name;
         this.gender = gender;
         this.birthDate = birthDate;
@@ -34,11 +34,11 @@ public class Person {
         this.gender = gender;
     }
 
-    public SimpleDateFormat getBirthDate() {
+    public int[] getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(SimpleDateFormat birthDate) {
+    public void setBirthDate(int[] birthDate) {
         this.birthDate = birthDate;
     }
 
