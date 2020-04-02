@@ -1,6 +1,8 @@
 import controller.ArrayListStudent;
+import controller.LinkedListStudent;
 import model.Student;
 
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Main {
@@ -8,7 +10,6 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int choice;
         boolean isExit = false;
-        ArrayListStudent listStudent;
         System.out.println("Student Management Program!");
         System.out.println("1. Manage Student by ArrayList");
         System.out.println("2. Manage Student by LinkedList");
@@ -17,7 +18,7 @@ public class Main {
         choice = scanner.nextInt();
         switch (choice) {
             case 1:
-                listStudent = new ArrayListStudent();
+                ArrayListStudent listStudent = new ArrayListStudent();
                 listStudent.add(new Student("10",8.5,"vanduc2514@gmail.com"));
                 listStudent.add(new Student("11",1,"anhnam2514@gmail.com"));
                 do {
@@ -64,6 +65,51 @@ public class Main {
                 } while (!isExit);
                 break;
             case 2:
+                LinkedListStudent linkedListStudent = new LinkedListStudent();
+                linkedListStudent.students.add(new Student("10",8.5,"vanduc2514@gmail.com"));
+                linkedListStudent.students.add(new Student("11",1,"anhnam2514@gmail.com"));
+                do {
+                    displayMenu();
+                    choice = scanner.nextInt();
+                    if (isValidChoice(choice)) {
+                        switch (choice) {
+                            case 0:
+                                System.out.println("Exit Program!");
+                                isExit = true;
+                                break;
+                            case 1:
+                                linkedListStudent.addAllStudent();
+                                break;
+                            case 2:
+                                linkedListStudent.searchStudentByID();
+                                break;
+                            case 3:
+                                linkedListStudent.searchStudentByName();
+                                break;
+                            case 4:
+                                linkedListStudent.updateStudentByID();
+                                break;
+                            case 5:
+                                linkedListStudent.updateStudentByName();
+                                break;
+                            case 6:
+                                linkedListStudent.removeStudentByID();
+                                break;
+                            case 7:
+                                linkedListStudent.removeStudentByName();
+                                break;
+                            case 8:
+                                linkedListStudent.display();
+                                break;
+                            case 9:
+                                linkedListStudent.displayFemaleStudent();
+                                break;
+                            case 10:
+                                linkedListStudent.displayStudentHasScholarship();
+                                break;
+                        }
+                    }
+                } while (!isExit);
                 break;
             case 0:
                 System.out.println("Exit Program!");

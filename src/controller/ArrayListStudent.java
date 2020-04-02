@@ -3,9 +3,8 @@ package controller;
 import model.Student;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
-public class ArrayListStudent extends StudentManagement {
+public class ArrayListStudent extends StudentManagementAbstract {
     private int size;
     private static final int DEFAULT_CAPACITY = 10;
     private model.Student students[];
@@ -92,6 +91,7 @@ public class ArrayListStudent extends StudentManagement {
         }
     }
 
+    @Override
     public void displayStudentHasScholarship() {
         for (int index = 0; index < size; index++) {
             if (students[index].isValidForScholarship()) {
@@ -102,6 +102,7 @@ public class ArrayListStudent extends StudentManagement {
         }
     }
 
+    @Override
     public void displayFemaleStudent() {
         for (int index = 0; index < size; index++) {
             if (students[index].isFemale()) {
@@ -111,6 +112,7 @@ public class ArrayListStudent extends StudentManagement {
         }
     }
 
+    @Override
     public void addAllStudent() {
         System.out.print("Enter amount of students: ");
         int amount = scanner.nextInt();
@@ -125,6 +127,7 @@ public class ArrayListStudent extends StudentManagement {
         }
     }
 
+    @Override
     public void searchStudentByID() {
         System.out.print("Enter Student's ID: ");
         String id = scanner.next();
@@ -136,6 +139,7 @@ public class ArrayListStudent extends StudentManagement {
         }
     }
 
+    @Override
     public void searchStudentByName() {
         System.out.print("Enter Student's name: ");
         String name = scanner.nextLine();
@@ -147,6 +151,7 @@ public class ArrayListStudent extends StudentManagement {
         }
     }
 
+    @Override
     public void updateStudentByID() {
         System.out.print("Enter Student's id: ");
         String id = scanner.next();
@@ -161,6 +166,7 @@ public class ArrayListStudent extends StudentManagement {
         }
     }
 
+    @Override
     public void updateStudentByName() {
         System.out.print("Enter Student's name: ");
         String name = scanner.nextLine();
@@ -175,6 +181,7 @@ public class ArrayListStudent extends StudentManagement {
         }
     }
 
+    @Override
     public void removeStudentByID() {
         System.out.print("Enter Student's id: ");
         String id = scanner.next();
@@ -192,6 +199,7 @@ public class ArrayListStudent extends StudentManagement {
         }
     }
 
+    @Override
     public void removeStudentByName() {
         System.out.print("Enter Student's name: ");
         String name = scanner.nextLine();
